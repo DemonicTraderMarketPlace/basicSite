@@ -14,7 +14,8 @@ namespace BookList.Controllers
         [Route("api/[Controller]/add")]
         public ActionResult AcceptBasicAgregate([FromBody]AddNewBook addNewBook)
         {
-            addNewBook.Id = Guid.NewGuid();
+            if (string.IsNullOrEmpty(addNewBook.Id)) addNewBook.Id = Guid.NewGuid().ToString();
+            //if(addNewBook.Id == Guid.Empty) addNewBook.Id = Guid.NewGuid();
             BookAggregate aggregate = new BookAggregate();
             CommandHandler.ActivateCommand(addNewBook, aggregate);
             return Ok();
@@ -35,5 +36,19 @@ namespace BookList.Controllers
                 return BadRequest(e.Message);
             }
         }
+        [HttpGet]
+        [Route("api/[controller]/getActive")]
+        public ActionResult GetActiveBooks()
+        {
+            return Json(Connection.Book.From("BookList", new { status = "Active" }).ToCollection<BookListData>().Execute());
+        }
+    }
+
+    public class AddNewBookJson
+    {
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public string PublishingHouse { get; set; }
+        public string PublicationDate { get; set; }
     }
 }

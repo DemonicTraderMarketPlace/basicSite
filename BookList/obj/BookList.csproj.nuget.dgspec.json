@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GoogleDrive\\BasicCQRS-VueJS\\BookList\\BookList.csproj": {}
+    "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj": {}
   },
   "projects": {
-    "D:\\GoogleDrive\\BasicCQRS-VueJS\\BookList\\BookList.csproj": {
+    "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GoogleDrive\\BasicCQRS-VueJS\\BookList\\BookList.csproj",
+        "projectUniqueName": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj",
         "projectName": "BookList",
-        "projectPath": "D:\\GoogleDrive\\BasicCQRS-VueJS\\BookList\\BookList.csproj",
+        "projectPath": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj",
         "packagesPath": "C:\\Users\\Josh\\.nuget\\packages\\",
-        "outputPath": "D:\\GoogleDrive\\BasicCQRS-VueJS\\BookList\\obj\\",
+        "outputPath": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

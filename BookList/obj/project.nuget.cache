@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d5i+Bxy1F2kXWDUM34xwjjgZzvPOlKuPoRPWXpH2OPRclQZBEhsnMt+dwUWd6CtkcAqkTOXFGK1AmTm6kglNFQ==",
+  "dgSpecHash": "S5TPBxasQIqAC8ckbYDR0C7ezgsgdWYpHjKwzsU9Z1XitUgiUW8e97Of+qROpbF6lusJVibJJvxji4IBqxzsaw==",
   "success": true,
-  "projectFilePath": "D:\\GoogleDrive\\BasicCQRS-VueJS\\BookList\\BookList.csproj",
+  "projectFilePath": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Josh\\.nuget\\packages\\eventstore.client\\5.0.8\\eventstore.client.5.0.8.nupkg.sha512",
     "C:\\Users\\Josh\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

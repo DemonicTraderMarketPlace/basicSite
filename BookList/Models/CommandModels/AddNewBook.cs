@@ -9,7 +9,7 @@ namespace BookList.Models.CommandModels
     public class AddNewBook : Commands
     {
         public string Title { get; set; }
-        public DateTime PublicationDate { get; set; }
-        public string  PublishingHouse { get; set; }
+        public string PublishingHouse { get; set; }
+        public string PublicationDate { get; set; }
     }
 }

@@ -7,7 +7,7 @@ namespace BookList.Domain
 {
     public class BookAggregate : Aggregate
     {
-        internal Guid Id;
+        internal string Id;
         internal bool Active;
         public override Events[] Execute(Commands cmd)
         {
@@ -24,23 +24,23 @@ namespace BookList.Domain
 
         private Events[] _addNewBook(AddNewBook cmd)
         {
-            if (Guid.Empty == cmd.Id) throw new Exception("Id is a required field");
-            if (Id != Guid.Empty) throw new Exception("Book already been created");
+            if (string.IsNullOrEmpty(cmd.Id)) throw new Exception("Id is a required field");
+            if (!string.IsNullOrEmpty(Id)) throw new Exception("Book already been created");
             return new Events[]
             {
                 new NewBookAdded
                 {
                     Id = cmd.Id,
                     Title = cmd.Title,
-                    PublicationDate = cmd.PublicationDate,
+                    PublicationDate = DateTime.Parse(cmd.PublicationDate),
                     PublishingHouse = cmd.PublishingHouse                    
                 }
             };
         }
         private Events[] _removeBook(RemoveBook cmd)
         {
-            if (Id == Guid.Empty) throw new Exception("Book Not Found");
-            if (cmd.Id == Guid.Empty) throw new Exception("Id is a required field");
+            if (string.IsNullOrEmpty(Id)) throw new Exception("Book Not Found");
+            if (string.IsNullOrEmpty(cmd.Id)) throw new Exception("Id is a required field");
             if (!Active) throw new Exception("Book Already Removed");
             return new Events[]
             {

@@ -35,7 +35,9 @@ namespace BookList.Infra.Sql
                         string fullClassName = nameSpace + "." + methodName;
                         object classToInvoke = Activator.CreateInstance(Type.GetType(fullClassName));
                         string dboParams = "";
-                        string tableName = key[0];
+                        string tableName;
+                        if (key[0].Contains("Data")) tableName = key[0].Split("Data")[0];
+                         else tableName = key[0];
                         foreach (PropertyInfo propertyInfo in classToInvoke.GetType().GetProperties())
                         {
                             if (propertyInfo.Name.ToString() != "Id")
@@ -69,7 +71,7 @@ namespace BookList.Infra.Sql
                             }
                         }
                         string commandtext = "IF NOT EXISTS(SELECT * FROM sysobjects WHERE id = object_id(N'[dbo].["
-                            + tableName + "]'))" + " CREATE TABLE " + tableName + "(" + " Id varchar(500) PRIMARY KEY, "
+                            + tableName + "]'))" + " CREATE TABLE " + tableName + "(" + " Id UniqueIdentifier PRIMARY KEY, "
                             + dboParams + ");";
                         SQLConnection.SQLConnector(commandtext);
                     }

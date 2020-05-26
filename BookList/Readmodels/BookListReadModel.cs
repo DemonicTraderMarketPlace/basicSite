@@ -1,4 +1,5 @@
-﻿using BookList.Infra.BaseClasses;
+﻿using BookList.DataConnection;
+using BookList.Infra.BaseClasses;
 using BookList.Models.EventModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,7 +18,7 @@ namespace BookList.Readmodels
                     NewBookAdded create = data.ToObject<NewBookAdded>();
                     BookListData table = new BookListData
                     {
-                       Id = create.Id,
+                       Id = Guid.Parse(create.Id),
                        PublicationDate = create.PublicationDate,
                        PublishingHouse = create.PublishingHouse,
                        Status = "Active",
@@ -27,11 +28,16 @@ namespace BookList.Readmodels
 
                 case "BookRemoved":
                     BookRemoved removed = data.ToObject<BookRemoved>();
-                    table = (BookListData)Helpers.GetReadmodelData("basic", removed.Id);
+                    table = GetRemodelData(Guid.Parse(removed.Id));
                     table.Status = "Closed";
                     return table;
 
             }return null;
+        }
+
+        public static BookListData GetRemodelData(Guid id)
+        {
+            return Connection.Book.From("BookList", new { id }).ToObject<BookListData>().Execute();
         }
     }
 
