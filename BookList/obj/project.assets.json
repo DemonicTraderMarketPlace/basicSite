@@ -8128,11 +8128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj",
+      "projectUniqueName": "D:\\GoogleDrive\\TestApp-BookList\\basicSite\\BookList\\BookList.csproj",
       "projectName": "BookList",
-      "projectPath": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\BookList.csproj",
+      "projectPath": "D:\\GoogleDrive\\TestApp-BookList\\basicSite\\BookList\\BookList.csproj",
       "packagesPath": "C:\\Users\\Josh\\.nuget\\packages\\",
-      "outputPath": "D:\\GoogleDrive\\BookList-TestApp\\BookList\\obj\\",
+      "outputPath": "D:\\GoogleDrive\\TestApp-BookList\\basicSite\\BookList\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

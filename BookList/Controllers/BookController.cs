@@ -27,6 +27,7 @@ namespace BookList.Controllers
         {
             try
             {
+                removeBook.Id = removeBook.Id.ToLower();
                 BookAggregate aggregate = new BookAggregate();
                 CommandHandler.ActivateCommand(removeBook, aggregate);
                 return Ok();
